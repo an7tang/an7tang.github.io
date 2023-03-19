@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Travel &#8211; Anthony Tang</title>
+	<atom:link href="http://localhost/category/travel/feed/?simply_static_page=4213" rel="self" type="application/rss+xml" />
+	<link>https://an7tang.github.io/</link>
+	<description>A blog of casual words</description>
+	<lastBuildDate>Sun, 19 Mar 2023 23:22:01 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>The very first post</title>
+		<link>https://an7tang.github.io/2023/03/19/the-very-first-post/</link>
+					<comments>https://an7tang.github.io/2023/03/19/the-very-first-post/#respond</comments>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2023 21:58:15 +0000</pubDate>
+				<category><![CDATA[Travel]]></category>
+		<guid isPermaLink="false">https://an7tang.github.io/?p=1855</guid>
+
+					<description><![CDATA[Below contents are from https://github.com/MaartenGr/BERTopic   We start by extracting topics from the well-known 20 newsgroups dataset containing English documents: from bertopic import BERTopic from sklearn.datasets import fetch_20newsgroups docs = fetch_20newsgroups(subset='all', remove=('headers', 'footers', 'quotes'))['data'] topic_model = BERTopic() topics, probs = topic_model.fit_transform(docs) After generating topics and their probabilities, we can access the frequent topics that were &#8230;<p class="read-more"> <a class="" href="https://an7tang.github.io/2023/03/19/the-very-first-post/"> <span class="screen-reader-text">The very first post</span> Read More »</a></p>]]></description>
+										<content:encoded><![CDATA[		<div data-elementor-type="wp-post" data-elementor-id="1855" class="elementor elementor-1855">
+									<section class="elementor-section elementor-top-section elementor-element elementor-element-3375dd8c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3375dd8c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-268cadfc" data-id="268cadfc" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6a83367b elementor-widget elementor-widget-text-editor" data-id="6a83367b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.11.5 - 14-03-2023 */
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style>				<p><!-- wp:paragraph --></p>
+<p dir="auto">Below contents are from https://github.com/MaartenGr/BERTopic</p>
+<p dir="auto"> </p>
+<p dir="auto">We start by extracting topics from the well-known 20 newsgroups dataset containing English documents:</p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto">
+<pre><span class="pl-k">from</span> <span class="pl-s1">bertopic</span> <span class="pl-k">import</span> <span class="pl-v">BERTopic</span>
+<span class="pl-k">from</span> <span class="pl-s1">sklearn</span>.<span class="pl-s1">datasets</span> <span class="pl-k">import</span> <span class="pl-s1">fetch_20newsgroups</span>
+ 
+<span class="pl-s1">docs</span> <span class="pl-c1">=</span> <span class="pl-en">fetch_20newsgroups</span>(<span class="pl-s1">subset</span><span class="pl-c1">=</span><span class="pl-s">'all'</span>,  <span class="pl-s1">remove</span><span class="pl-c1">=</span>(<span class="pl-s">'headers'</span>, <span class="pl-s">'footers'</span>, <span class="pl-s">'quotes'</span>))[<span class="pl-s">'data'</span>]
+
+<span class="pl-s1">topic_model</span> <span class="pl-c1">=</span> <span class="pl-v">BERTopic</span>()
+<span class="pl-s1">topics</span>, <span class="pl-s1">probs</span> <span class="pl-c1">=</span> <span class="pl-s1">topic_model</span>.<span class="pl-en">fit_transform</span>(<span class="pl-s1">docs</span>)</pre>
+<p dir="auto">After generating topics and their probabilities, we can access the frequent topics that were generated:</p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto">
+<pre><span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">topic_model</span>.<span class="pl-en">get_topic_info</span>()
+
+<span class="pl-v">Topic</span>	<span class="pl-v">Count</span>	<span class="pl-v">Name</span>
+<span class="pl-c1">-</span><span class="pl-c1">1</span>	<span class="pl-c1">4630</span>	<span class="pl-c1">-</span><span class="pl-c1">1_</span><span class="pl-s1">can_your_will_any</span>
+<span class="pl-c1">0</span>	<span class="pl-c1">693</span>	<span class="pl-c1">49_</span><span class="pl-s1">windows_drive_dos_file</span>
+<span class="pl-c1">1</span>	<span class="pl-c1">466</span>	<span class="pl-c1">32_j</span><span class="pl-s1">esus_bible_christian_faith</span>
+<span class="pl-c1">2</span>	<span class="pl-c1">441</span>	<span class="pl-c1">2_</span><span class="pl-s1">space_launch_orbit_lunar</span>
+<span class="pl-c1">3</span>	<span class="pl-c1">381</span>	<span class="pl-c1">22_</span><span class="pl-s1">key_encryption_keys_encrypted</span></pre>
+<p dir="auto">The <code>-1</code> topic refers to all outlier documents and are typically ignored. Next, let&#8217;s take a look at the most frequent topic that was generated:</p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto">
+<pre><span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">topic_model</span>.<span class="pl-en">get_topic</span>(<span class="pl-c1">0</span>)
+
+[(<span class="pl-s">'windows'</span>, <span class="pl-c1">0.006152228076250982</span>),
+ (<span class="pl-s">'drive'</span>, <span class="pl-c1">0.004982897610645755</span>),
+ (<span class="pl-s">'dos'</span>, <span class="pl-c1">0.004845038866360651</span>),
+ (<span class="pl-s">'file'</span>, <span class="pl-c1">0.004140142872194834</span>),
+ (<span class="pl-s">'disk'</span>, <span class="pl-c1">0.004131678774810884</span>),
+ (<span class="pl-s">'mac'</span>, <span class="pl-c1">0.003624848635985097</span>),
+ (<span class="pl-s">'memory'</span>, <span class="pl-c1">0.0034840976976789903</span>),
+ (<span class="pl-s">'software'</span>, <span class="pl-c1">0.0034415334250699077</span>),
+ (<span class="pl-s">'email'</span>, <span class="pl-c1">0.0034239554442333257</span>),
+ (<span class="pl-s">'pc'</span>, <span class="pl-c1">0.003047105930670237</span>)]</pre>
+<p dir="auto">Using <code>.get_document_info</code>, we can also extract information on a document level, such as their corresponding topics, probabilities, whether they are representative documents for a topic, etc.:</p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto">
+<pre><span class="pl-c1">&gt;&gt;</span><span class="pl-c1">&gt;</span> <span class="pl-s1">topic_model</span>.<span class="pl-en">get_document_info</span>(<span class="pl-s1">docs</span>)
+
+<span class="pl-v">Document</span>                               <span class="pl-v">Topic</span>	<span class="pl-v">Name</span>	                        <span class="pl-v">Top_n_words</span>                     <span class="pl-v">Probability</span>    ...
+<span class="pl-v">I</span> <span class="pl-s1">am</span> <span class="pl-s1">sure</span> <span class="pl-s1">some</span> <span class="pl-s1">bashers</span> <span class="pl-s1">of</span> <span class="pl-v">Pens</span>...	<span class="pl-c1">0</span>	<span class="pl-c1">0_</span><span class="pl-s1">game_team_games_season</span>	<span class="pl-s1">game</span> <span class="pl-c1">-</span> <span class="pl-s1">team</span> <span class="pl-c1">-</span> <span class="pl-s1">games</span>...	        <span class="pl-c1">0.200010</span>       ...
+<span class="pl-v">My</span> <span class="pl-s1">brother</span> <span class="pl-c1">is</span> <span class="pl-s1">in</span> <span class="pl-s1">the</span> <span class="pl-s1">market</span> <span class="pl-s1">for</span>...      <span class="pl-c1">-</span><span class="pl-c1">1</span>     <span class="pl-c1">-</span><span class="pl-c1">1_</span><span class="pl-s1">can_your_will_any</span>	        <span class="pl-s1">can</span> <span class="pl-c1">-</span> <span class="pl-s1">your</span> <span class="pl-c1">-</span> <span class="pl-s1">will</span>...	        <span class="pl-c1">0.420668</span>       ...
+<span class="pl-v">Finally</span> <span class="pl-s1">you</span> <span class="pl-s1">said</span> <span class="pl-s1">what</span> <span class="pl-s1">you</span> <span class="pl-s1">dream</span>...	<span class="pl-c1">-</span><span class="pl-c1">1</span>     <span class="pl-c1">-</span><span class="pl-c1">1_</span><span class="pl-s1">can_your_will_any</span>	        <span class="pl-s1">can</span> <span class="pl-c1">-</span> <span class="pl-s1">your</span> <span class="pl-c1">-</span> <span class="pl-s1">will</span>...            <span class="pl-c1">0.807259</span>       ...
+<span class="pl-v">Think</span>! <span class="pl-v">It</span>'<span class="pl-s1">s</span> <span class="pl-s1">the</span> <span class="pl-v">SCSI</span> <span class="pl-s1">card</span> <span class="pl-s1">doing</span>...	<span class="pl-c1">49</span>     <span class="pl-c1">49_</span><span class="pl-s1">windows_drive_dos_file</span>	<span class="pl-s1">windows</span> <span class="pl-c1">-</span> <span class="pl-s1">drive</span> <span class="pl-c1">-</span> <span class="pl-s1">docs</span>...	<span class="pl-c1">0.071746</span>       ...
+<span class="pl-c1">1</span>) <span class="pl-v">I</span> <span class="pl-s1">have</span> <span class="pl-s1">an</span> <span class="pl-s1">old</span> <span class="pl-v">Jasmine</span> <span class="pl-s1">drive</span>...	<span class="pl-c1">49</span>     <span class="pl-c1">49_</span><span class="pl-s1">windows_drive_dos_file</span>	<span class="pl-s1">windows</span> <span class="pl-c1">-</span> <span class="pl-s1">drive</span> <span class="pl-c1">-</span> <span class="pl-s1">docs</span>...	<span class="pl-c1">0.038983</span>       ...</pre>
+<blockquote>
+<p dir="auto"><span class="color-fg-accent">Note</span></p>
+<p dir="auto">Use <code>BERTopic(language="multilingual")</code> to select a model that supports 50+ languages.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<p><!-- /wp:paragraph --></p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+							</div>
+		]]></content:encoded>
+					
+					<wfw:commentRss>https://an7tang.github.io/2023/03/19/the-very-first-post/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>The First Post</title>
+		<link>https://an7tang.github.io/2023/03/19/the-first-post/</link>
+					<comments>https://an7tang.github.io/2023/03/19/the-first-post/#respond</comments>
+		
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2023 21:54:44 +0000</pubDate>
+				<category><![CDATA[Travel]]></category>
+		<guid isPermaLink="false">https://an7tang.github.io/?p=1852</guid>
+
+					<description><![CDATA[]]></description>
+										<content:encoded><![CDATA[]]></content:encoded>
+					
+					<wfw:commentRss>https://an7tang.github.io/2023/03/19/the-first-post/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
