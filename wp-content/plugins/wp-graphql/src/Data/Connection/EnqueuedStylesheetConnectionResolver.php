@@ -1,0 +1,5 @@
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;WPGraphQL\Data\Connection\AbstractConnectionResolver&quot; not found in /Users/anqitang/code/local/wordpress/app/public/wp-content/plugins/wp-graphql/src/Data/Connection/EnqueuedStylesheetConnectionResolver.php:13
+Stack trace:
+#0 {main}
+  thrown in <b>/Users/anqitang/code/local/wordpress/app/public/wp-content/plugins/wp-graphql/src/Data/Connection/EnqueuedStylesheetConnectionResolver.php</b> on line <b>13</b><br>
