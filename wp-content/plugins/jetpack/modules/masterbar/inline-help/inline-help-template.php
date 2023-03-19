@@ -1,3 +1,0 @@
-<div class="a8c-faux-inline-help">
-	<a class="a8c-faux-inline-help__button" href="https://an7tang.github.io/wp-content/plugins/jetpack/modules/masterbar/inline-help/<br />_<b>Fatal error</b>:  Uncaught Error: Call to undefined function esc_url() in /Users/anqitang/code/local/wordpress/app/public/wp-content/plugins/jetpack/modules/masterbar/inline-help/inline-help-template.php:12_Stack trace:_#0 {main}_  thrown in <b>/Users/anqitang/code/local/wordpress/app/public/wp-content/plugins/jetpack/modules/masterbar/inline-help/inline-help-template.php</b> on line <b>12</b><br />"></a>
-</div>
