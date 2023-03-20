@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Anthony Tang</title>
-	<atom:link href="http://localhost/feed/?simply_static_page=4528" rel="self" type="application/rss+xml" />
-	<link>https://an7tang.github.io/</link>
+	<atom:link href="http://localhost/feed/?simply_static_page=5332" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>A blog of casual words</description>
 	<lastBuildDate>Mon, 20 Mar 2023 01:19:28 +0000</lastBuildDate>
 	<language>en-GB</language>
@@ -21,15 +21,15 @@
 	<generator>https://wordpress.org/?v=6.1.1</generator>
 	<item>
 		<title>The very first post</title>
-		<link>https://an7tang.github.io/2023/03/19/the-very-first-post/</link>
-					<comments>https://an7tang.github.io/2023/03/19/the-very-first-post/#respond</comments>
+		<link>/blog/travel/the-very-first-post/</link>
+					<comments>/blog/travel/the-very-first-post/#respond</comments>
 		
 		<dc:creator><![CDATA[Anthony Tang]]></dc:creator>
 		<pubDate>Sun, 19 Mar 2023 21:58:15 +0000</pubDate>
 				<category><![CDATA[Travel]]></category>
-		<guid isPermaLink="false">https://an7tang.github.io/?p=1855</guid>
+		<guid isPermaLink="false">/?p=1855</guid>
 
-					<description><![CDATA[Below contents are from https://github.com/MaartenGr/BERTopic   We start by extracting topics from the well-known 20 newsgroups dataset containing English documents: from bertopic import BERTopic from sklearn.datasets import fetch_20newsgroups docs = fetch_20newsgroups(subset='all', remove=('headers', 'footers', 'quotes'))['data'] topic_model = BERTopic() topics, probs = topic_model.fit_transform(docs) After generating topics and their probabilities, we can access the frequent topics that were &#8230;<p class="read-more"> <a class="" href="https://an7tang.github.io/2023/03/19/the-very-first-post/"> <span class="screen-reader-text">The very first post</span> Read More »</a></p>]]></description>
+					<description><![CDATA[Below contents are from https://github.com/MaartenGr/BERTopic   We start by extracting topics from the well-known 20 newsgroups dataset containing English documents: from bertopic import BERTopic from sklearn.datasets import fetch_20newsgroups docs = fetch_20newsgroups(subset='all', remove=('headers', 'footers', 'quotes'))['data'] topic_model = BERTopic() topics, probs = topic_model.fit_transform(docs) After generating topics and their probabilities, we can access the frequent topics that were &#8230;<p class="read-more"> <a class="" href="/blog/travel/the-very-first-post/"> <span class="screen-reader-text">The very first post</span> Read More »</a></p>]]></description>
 										<content:encoded><![CDATA[		<div data-elementor-type="wp-post" data-elementor-id="1855" class="elementor elementor-1855">
 									<section class="elementor-section elementor-top-section elementor-element elementor-element-3375dd8c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3375dd8c" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-default">
@@ -101,25 +101,25 @@
 							</div>
 		]]></content:encoded>
 					
-					<wfw:commentRss>https://an7tang.github.io/2023/03/19/the-very-first-post/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/travel/the-very-first-post/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>The First Post</title>
-		<link>https://an7tang.github.io/2023/03/19/the-first-post/</link>
-					<comments>https://an7tang.github.io/2023/03/19/the-first-post/#respond</comments>
+		<link>/blog/travel/the-first-post/</link>
+					<comments>/blog/travel/the-first-post/#respond</comments>
 		
 		<dc:creator><![CDATA[Anthony Tang]]></dc:creator>
 		<pubDate>Sun, 19 Mar 2023 21:54:44 +0000</pubDate>
 				<category><![CDATA[Travel]]></category>
-		<guid isPermaLink="false">https://an7tang.github.io/?p=1852</guid>
+		<guid isPermaLink="false">/?p=1852</guid>
 
 					<description><![CDATA[]]></description>
 										<content:encoded><![CDATA[]]></content:encoded>
 					
-					<wfw:commentRss>https://an7tang.github.io/2023/03/19/the-first-post/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/travel/the-first-post/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

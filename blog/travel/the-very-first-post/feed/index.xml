@@ -7,11 +7,11 @@
 	>
 <channel>
 	<title>
-	Comments on: The First Post	</title>
-	<atom:link href="http://localhost/2023/03/19/the-first-post/feed/?simply_static_page=4607" rel="self" type="application/rss+xml" />
-	<link>https://an7tang.github.io/2023/03/19/the-first-post/</link>
+	Comments on: The very first post	</title>
+	<atom:link href="http://localhost/blog/travel/the-very-first-post/feed/?simply_static_page=5410" rel="self" type="application/rss+xml" />
+	<link>/blog/travel/the-very-first-post/</link>
 	<description>A blog of casual words</description>
-	<lastBuildDate>Sun, 19 Mar 2023 21:54:44 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 20 Mar 2023 01:19:28 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
