@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Research & Career]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://an7tang.github.io/</link><image><url>https://an7tang.github.io/lib/media/favicon.png</url><title>Research &amp; Career</title><link>https://an7tang.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sat, 06 Apr 2024 15:03:34 GMT</lastBuildDate><atom:link href="https://an7tang.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sat, 06 Apr 2024 15:03:33 GMT</pubDate><copyright><![CDATA[Anqi Tang]]></copyright><ttl>60</ttl><dc:creator>Anqi Tang</dc:creator><item><title><![CDATA[PEFT]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Research & Career]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://an7tang.github.io/</link><image><url>https://an7tang.github.io/lib/media/favicon.png</url><title>Research &amp; Career</title><link>https://an7tang.github.io/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sat, 06 Apr 2024 15:13:52 GMT</lastBuildDate><atom:link href="https://an7tang.github.io/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sat, 06 Apr 2024 15:13:51 GMT</pubDate><copyright><![CDATA[Anqi Tang]]></copyright><ttl>60</ttl><dc:creator>Anqi Tang</dc:creator><item><title><![CDATA[PEFT]]></title><description><![CDATA[ 
  <br><br>PEFT – "Parameter-Efficient Fine-Tuning" – 参数高效微调<br><br>核心
 通过只调整模型中一小部分参数的方式，来适应新的任务或数据集，从而 –&gt; 显著降低了计算和存储成本
 <br>
@@ -183,5 +183,13 @@ Post-norm和pre-norm？<br>
 <br>文档总结、基于文档的问答
 <br>模型选型、中间有哪些技术<br>
 字节技术公众号、知乎：飞书大模型技术方案（改一改再说）
-]]></description><link>https://an7tang.github.io/Comp Sci/LLM 面试考点.html</link><guid isPermaLink="false">Comp Sci/LLM 面试考点.md</guid><dc:creator><![CDATA[Anqi Tang]]></dc:creator><pubDate>Sat, 06 Apr 2024 14:02:33 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
- <br>Hi, there~]]></description><link>https://an7tang.github.io/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[Anqi Tang]]></dc:creator><pubDate>Sat, 06 Apr 2024 14:56:19 GMT</pubDate></item></channel></rss>
+]]></description><link>https://an7tang.github.io/Comp Sci/LLM 面试考点.html</link><guid isPermaLink="false">Comp Sci/LLM 面试考点.md</guid><dc:creator><![CDATA[Anqi Tang]]></dc:creator><pubDate>Sat, 06 Apr 2024 14:02:33 GMT</pubDate></item><item><title><![CDATA[Homepage]]></title><description><![CDATA[ 
+ <br>Hi, there~ This is Anthony's Note.<br>Table of Content
+
+<br><a data-href="LLM 面试考点" href="https://an7tang.github.io/Comp Sci/LLM 面试考点.html" class="internal-link" target="_self" rel="noopener"><span class="iconize-icon-in-link" title="LiBot" aria-label="LiBot" data-icon="LiBot" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></span>LLM 面试考点</a>
+
+<br><a data-href="PEFT" href="https://an7tang.github.io/Comp Sci/LLM/PEFT.html" class="internal-link" target="_self" rel="noopener">PEFT</a>
+
+
+
+<br>More content is coming soon.]]></description><link>https://an7tang.github.io/Homepage.html</link><guid isPermaLink="false">Homepage.md</guid><dc:creator><![CDATA[Anqi Tang]]></dc:creator><pubDate>Sat, 06 Apr 2024 15:13:51 GMT</pubDate></item></channel></rss>
