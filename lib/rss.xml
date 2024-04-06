@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Research & Career]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>Research &amp; Career</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sat, 06 Apr 2024 14:02:35 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sat, 06 Apr 2024 14:02:34 GMT</pubDate><copyright><![CDATA[Anqi Tang]]></copyright><ttl>60</ttl><dc:creator>Anqi Tang</dc:creator><item><title><![CDATA[PEFT]]></title><description><![CDATA[ 
+ <br><br>PEFT – "Parameter-Efficient Fine-Tuning" – 参数高效微调<br><br>核心
+通过只调整模型中一小部分参数的方式，来适应新的任务或数据集，从而 –&gt; 显著降低了计算和存储成本
+<br>
+<br>参数效率
+
+<br>与传统的微调 SFT 相比，PEFT只需优化模型的一小部分参数（例如，只调整1%的参数），就能在新任务上达到接近全模型微调的效果。
+
+
+<br>资源节约
+
+<br>由于减少了需要调整的参数数量，PEFT大大减少了计算资源和存储空间的需求，使得在资源受限的环境中微调大型模型成为可能。
+
+
+<br>快速适应
+
+<br>PEFT使得模型能够快速适应新任务，这对于需要快速部署模型的应用场景尤为重要。
+
+
+<br><br>Additive approach:<br>
+<br>Adapter
+<br>LoRA
+<br>Prompt-based approach:<br>
+<br>P-Tuning
+<br>Prefix Tuning
+<br><br><br><img alt="Adapter - architecture.png" src="lib/media/adapter-architecture.png"><br>Adapter模块：对每个任务，仅添加少量训练参数<br><br>
+<br>在原神经网络中，插入新的Adapter Layer
+
+<br>新的Adapter中的参数初始值，随机生成
+<br>原网络中的参数保持不变
+
+
+<br><br>
+<br>parameter数量少
+
+<br>相比较于原网络，adapter module很小 –&gt; 意味着：虽然任务的增加，模型大小增长相对缓慢
+
+
+<br>A near-identity initialisation
+
+<br>Near-identity有助于训练的稳定性
+<br>（如果adapter参数的初始值改变）
+
+<br>......远离identity function，模型无法训练
+<br>......接近0，新模型和原模型无变化（因为：Adapter Layer中存在residual connection）
+
+
+
+
+<br><br><br>
+<br>Authors proposed a bottleneck architecture（如图，adapter layer，两头大，中间小）
+
+<br>First, project the original d-dimensional features into a smaller dimension, m.
+<br>Second, apply a nonlinearity
+<br>Final, project back to d dimensions
+
+
+<br><br>Adapter大小于parameter efficiency相关：<br>
+更小的adapters添加的parameters更少，代价是performance⬇️<br><br><br><img alt="LoRA - architecture.png" src="lib/media/lora-architecture.png" style="width: 350px; max-width: 100%;"><br>原理（线性代数）
+当adapting to特定任务时，预训练的LM具有低的"内在维度"，并且即使随机投影到一个更小的子空间，仍然可以高效学习。<br>
+受此启发，LoRA作者假设：在adaptation过程中，权重矩阵的更新同样具有低的“内在秩”。
+<br>Equation
+For a pre-trained weight matrix <br>
+<br>
+where , , and rank 
+<br><br>
+<br>训练期间，
+
+<br>冻结原模型的 weights  ，不对其进行梯度更新
+<br> 和  中包含可训练的参数
+
+
+<br>相比较传统fine-tune对整个模型的参数进行back-propagation来计算  ，LoRA用2个低秩 (Low Rank) 的 matrices  和  来替代 。
+<br>初始化  和 
+
+<br> –&gt; 正态分布 (Gaussian initialisation)
+<br> –&gt; 0
+<br>训练开始时， 的值为 0
+
+
+<br> 和  都与相同的input进行相乘，它们各自的输出向量再相加求和
+
+<br>传统：
+<br>LoRA：
+
+
+<br><br>
+<br>A Generalisation of Full Fine-tuning
+
+<br>将 LoRA 应用于所有权重矩阵时，我们通过将 LoRA 的秩 r 设置为预训练权重矩阵的秩，大致恢复了 Full Fine-tuning 的表达能力。
+<br>换句话说：随着我们增加可训练参数的数量，训练 LoRA 大致上收敛于训练原始模型
+
+<br>然而，基于 Adapter 的方法收敛于 MLP
+<br>基于 Prefix-Tuning 的方法收敛于一个不能处理长序列的模型
+
+
+
+
+<br>No Additional Inference Latency
+
+<br>部署在生产环境时，我们可以显式地计算并存储 ，并像往常一样执行推理
+
+
+<br>LoRA 支持高效切换下游任务
+
+<br>通过：减去  中当前  然后添加一个新任务的  （该操作快速且memory占用低）
+
+
+<br>LoRA 提高了训练的效率，降低了硬件要求（减少 memory 和 storage 的使用量）
+<br>LoRA 简易的线性设计，支持在部署时合并 trainable matrices 和 frozen weights
+<br>LoRA 与其它的PEFT方法无冲突，可以结合使用（如：prefix-tuning）
+<br><br>如果选择将 A 和 B 吸收进 W 以消除额外的推理延迟，那么在单个前向传播中批量处理具有不同 A 和 B 的不同任务就不那么直接了。<br>
+在延迟问题不重要的场景，可以选择：不 merge 权重，并动态选择 batch 中每个input sample 对应的 LoRA 模块。<br><br>Adapter Layer<br>
+<br>Introduce inference latency, by extending model depth
+<br>大模型依靠硬件的parallelism来保持low latency，但 adapter layers 必须sequentially处理数据<br>
+Prefix Tuning
+<br>保留一部分的序列长度用于adaptation，减少了模型在下游任务可用的 prompt 序列长度
+<br>Difficult to optimise. –&gt; 模型性能的变化是non-monotonic
+<br><br><br><br><br><br>]]></description><link>comp-sci/llm/peft.html</link><guid isPermaLink="false">Comp Sci/LLM/PEFT.md</guid><dc:creator><![CDATA[Anqi Tang]]></dc:creator><pubDate>Sat, 06 Apr 2024 13:10:10 GMT</pubDate><enclosure url="lib/media/adapter-architecture.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib/media/adapter-architecture.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[LLM 面试考点]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>预训练【和过往bert预训练近似】（学/灌/注入知识）
+<br>对齐
+
+<br>微调 SFT (Supervised Fine-tuning)
+<br><a data-href="RLHF" href="comp-sci/llm/rlhf.html" class="internal-link" target="_self" rel="noopener">RLHF</a>
+
+<br>（PPO、DPO）、RM
+
+<br>RLHF完整训练过程是什么？RL过程中涉及到几个模型？显存占用关系和SFT有什么区别？
+<br>RLHF过程中RM随着训练过程得分越来越高，效果就一定好吗？有没有极端情况？
+<br>强化学习：几个要素？PPO的loss function？大模型的loss function？对比PPO和DPO
+
+
+
+
+
+
+<br><br><br>
+<br>p-tuning v1\v2
+
+<br>解释P-tuning 的工作原理，并说明它与传统的 fine-tuning方法的不同之处。
+
+
+<br>prefix-tuning
+
+<br>介绍一下Prefix-tuning的思想和应用场景，以及它如何解决一些NLP任务中的挑战
+
+
+<br>lora【以及lora的变体（q-lora ， ada-lora）】
+
+<br>介绍一下Lora的原理和存在的问题
+
+
+<br><br>
+<br>flash-attention1，2
+<br>paged attention【各种对attention计算的优化】
+<br><br>
+<br>BLEU
+<br>ROUGE【rouge-L、 rouge-N】
+<br><br>Transformer<br>
+<br>Encoder-Decoder
+
+<br>T5
+
+
+<br>Encoder
+
+<br>BERT
+
+
+<br>Decoder
+
+<br>GPT-2
+<br>ChatGLM 1、2、3
+<br>LLAMA等等
+
+
+<br><br>数据并行、流水线并行、3D并行、量化、框架【VLLM、DeepSpeed】、tensorRT llm等<br> Ray（大模型调度推理框架）<br>
+模型压缩、知识蒸馏<br><br>比较细节的小点？<br>
+Post-norm和pre-norm？<br>
+大模型幻觉、遗忘的定义？产生原因？不同原因如何解决j？<br>如何增加context length 模型训练中节约显存的技巧<br><br><br>向量索引、embedding，top几？<br>
+主流的embedding有哪些？（看1-2个）<br><br>How?<br><br>几大模块<br><br>特点<br><br>方案/系统设计<br>
+<br>文档总结、基于文档的问答
+<br>模型选型、中间有哪些技术<br>
+字节技术公众号、知乎：飞书大模型技术方案（改一改再说）
+]]></description><link>comp-sci/llm-面试考点.html</link><guid isPermaLink="false">Comp Sci/LLM 面试考点.md</guid><dc:creator><![CDATA[Anqi Tang]]></dc:creator><pubDate>Sat, 06 Apr 2024 14:02:33 GMT</pubDate></item></channel></rss>
